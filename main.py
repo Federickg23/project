@@ -19,6 +19,8 @@ TEMPLATE = jinja2.Environment(
 class HomePage(webapp2.RequestHandler):
 
 	def get(self):
+		content = TEMPLATE.get_template('templates/home.html')
+		self.response.write(content.render())
 		print()
 
 app = webapp2.WSGIApplication([
